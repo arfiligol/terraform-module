@@ -1,17 +1,5 @@
-provider "google" {
-  project = "astute-city-391210"
-  region  = "asia-east1"
-
-
+resource "google_storage_bucket" "my_bucket" {
+  name          = var.bucket_name
+  location      = var.bucket_location
+  storage_class = var.bucket_storage_class
 }
-
-resource "google_storage_bucket" "default" {
-  name          = "ili-terraform-created-bucket"
-  force_destroy = false
-  location      = "asia-east1"
-  storage_class = "STANDARD"
-  versioning {
-    enabled = true
-  }
-}
-
