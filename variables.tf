@@ -1,3 +1,13 @@
+variable "projectID" {
+    description = "The ID of Project"
+    type        = string
+}
+
+variable "projectRegion" {
+    description = "The region of Project"
+    type        = string
+}
+
 variable "bucket_name" {
   description = "The name of the bucket"
   type        = string
