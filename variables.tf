@@ -16,7 +16,7 @@ variable "bucket_name" {
 variable "bucket_location" {
   description = "The location of the bucket"
   type        = string
-  default     = "us-central1"
+  default     = "asia-east1"
 }
 
 variable "bucket_storage_class" {
