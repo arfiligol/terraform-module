@@ -6,6 +6,13 @@ terraform {
       name = "dev-cxcxc-gcs-workspace-demo-ili"
     }
   }
+
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "~> 3.5" # 或其他更高版本
+    }
+  }
 }
 
 resource "google_storage_bucket" "my_bucket" {
@@ -14,10 +21,5 @@ resource "google_storage_bucket" "my_bucket" {
   storage_class = "STANDARD"         # 這是 Class Type，可以是 STANDARD, NEARLINE, COLDLINE, ARCHIVE
 
   # 強制使用 IAM 進行存取控制
-  iam_configuration {
-    uniform_bucket_level_access {
-      enabled = true
-    }
-    public_access_prevention = "unspecified"
-  }
+  uniform_bucket_level_access = false
 }
